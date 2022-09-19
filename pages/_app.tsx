@@ -1,7 +1,9 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
-import { ThemeProvider } from '@material-tailwind/react'
-import Layout from '../packages/components/Layout'
+import '../styles/globals.css';
+import { ThemeProvider } from '@material-tailwind/react';
+
+import Layout from '../packages/components/Layout';
+
+import type { AppProps } from 'next/app';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -10,7 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </Layout>
     </ThemeProvider>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

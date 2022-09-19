@@ -1,20 +1,20 @@
-import { Children, ReactNode } from "react"
-import Container from "./Container"
+import { Children, ReactNode } from 'react';
+import Container from './Container';
 
 interface Props {
-    children: ReactNode,
+  children: ReactNode;
 }
 
 function Layout(props: Props) {
-    const { children } = props
+  const { children } = props;
 
-    return (
-        <div className='min-h-screen bg-blue-gray-900 '>
-            <Container>
-                <div className="flex flex-col justify-center">{children}</div>
-            </Container>
-        </div>
-    )
+  return (
+    <div className='min-h-screen bg-blue-gray-900 '>
+      <Container>
+        <div className='flex flex-col justify-center'>{children}</div>
+      </Container>
+    </div>
+  );
 }
 
-export default Layout
+export default Layout;
