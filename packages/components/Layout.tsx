@@ -1,4 +1,5 @@
-import { Children, ReactNode } from 'react';
+import { ReactNode } from 'react';
+
 import Container from './Container';
 
 interface Props {
@@ -9,7 +10,7 @@ function Layout(props: Props) {
   const { children } = props;
 
   return (
-    <div className='bg-gradient-to-r from-blue-gray-900 to-blue-gray-500'>
+    <div className='bg-gradient-to-r from-blue-gray-900 to-blue-gray-500 min-h-screen'>
       <Container>
         <div className='flex flex-col justify-center'>{children}</div>
       </Container>
