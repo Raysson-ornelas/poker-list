@@ -38,7 +38,7 @@ const Login: NextPage = () => {
               href='#signup'
               variant='small'
               color='blue'
-              className='ml-1 font-bold'
+              className='font-bold'
             >
               Forgot your password?
             </Typography>

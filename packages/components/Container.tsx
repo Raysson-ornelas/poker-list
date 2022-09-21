@@ -8,7 +8,9 @@ function Container(props: Props) {
   const { children } = props;
 
   return (
-    <div className='mx-auto max-w-sm sm:max-w-2xl lg:max-w-6xl'>{children}</div>
+    <div className='mx-auto max-w-sm sm:max-w-2xl lg:max-w-6xl px-4'>
+      {children}
+    </div>
   );
 }
 

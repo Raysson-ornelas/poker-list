@@ -10,7 +10,7 @@ function Layout(props: Props) {
   const { children } = props;
 
   return (
-    <div className='bg-gradient-to-r from-blue-gray-900 to-blue-gray-500 min-h-screen'>
+    <div className='bg-blue-gray-900 min-h-screen'>
       <Container>
         <div className='flex flex-col justify-center'>{children}</div>
       </Container>
