@@ -1,14 +1,20 @@
-import { getSession, signOut, useSession } from 'next-auth/react';
-import { Button } from '@material-tailwind/react';
+import { getSession } from 'next-auth/react';
+import { Button, Input } from '@material-tailwind/react';
+
+import NavBar from '../packages/components/NavBar';
 
 import type { GetServerSideProps, NextPage } from 'next';
 
 const Home: NextPage = () => {
-  const { data: session } = useSession();
   return (
     <>
-      <h1>{`Bem vindo ${session?.user?.name}`}</h1>
-      <Button onClick={() => signOut()}>Logout</Button>
+      <NavBar />
+      <div className='flex flex-col lg:flex-row gap-4 w-full my-8'>
+        <Input label='Torneio' />
+        <Input label='Data' />
+        <Input label='Buy-in' />
+        <Button className='lg:w-56'>Salvar</Button>
+      </div>
     </>
   );
 };
