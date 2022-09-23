@@ -1,24 +1,16 @@
 import { getSession } from 'next-auth/react';
-import { Button, Input } from '@material-tailwind/react';
 import { PrismaClient } from '@prisma/client';
 
 import Grid from '../packages/components/Grid';
-import Navbar from '../packages/components/NavBar';
+import Layout from '../packages/components/Layout';
 
 import type { GetServerSideProps } from 'next';
 
 export default function Home({ initialTournaments = [] }) {
   return (
-    <>
-      <Navbar />
-      <div className='flex flex-col lg:flex-row gap-4 w-full my-8'>
-        <Input label='Torneio' />
-        <Input label='Data' />
-        <Input label='Buy-in' />
-        <Button className='lg:w-56'>Salvar</Button>
-      </div>
+    <Layout>
       <Grid tournaments={initialTournaments} />
-    </>
+    </Layout>
   );
 }
 

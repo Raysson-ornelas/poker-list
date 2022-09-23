@@ -3,8 +3,6 @@ import { ThemeProvider } from '@material-tailwind/react';
 import { SessionProvider } from 'next-auth/react';
 import { Session } from 'next-auth';
 
-import Layout from '../packages/components/Layout';
-
 import type { AppProps } from 'next/app';
 
 function MyApp({
@@ -16,9 +14,9 @@ function MyApp({
   return (
     <SessionProvider session={session}>
       <ThemeProvider>
-        <Layout>
+        <div className='bg-gray-900 min-h-screen'>
           <Component {...pageProps} />
-        </Layout>
+        </div>
       </ThemeProvider>
     </SessionProvider>
   );

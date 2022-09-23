@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
 
+import Navbar from '../components/NavBar';
+
 import Container from './Container';
 
 interface Props {
@@ -10,11 +12,12 @@ function Layout(props: Props) {
   const { children } = props;
 
   return (
-    <div className='bg-blue-gray-900 min-h-screen'>
+    <>
+      <Navbar />
       <Container>
         <div className='flex flex-col justify-center'>{children}</div>
       </Container>
-    </div>
+    </>
   );
 }
 
