@@ -16,8 +16,6 @@ export default async function handler(
         data: { name, date, buyIn },
       });
 
-      console.log(tournament);
-
       res.status(200).json(tournament);
     } catch (e) {
       res.status(500).json({ message: 'Something went wrong' });

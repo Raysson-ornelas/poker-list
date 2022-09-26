@@ -1,6 +1,7 @@
 import { ParsedUrlQuery } from 'querystring';
 
 import { GetStaticPaths, GetStaticProps } from 'next';
+import { useRouter } from 'next/router';
 import { PrismaClient, Tournaments } from '@prisma/client';
 
 import Layout from '../../packages/components/Layout';
@@ -11,6 +12,12 @@ interface IParams extends ParsedUrlQuery {
 
 //TODO: Criar o layout dessa pagina
 const ListedTournaments = (props: Tournaments) => {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return 'Loading...';
+  }
+
   return (
     <Layout>
       <h1>{props.id}</h1>
@@ -51,6 +58,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
     paths: tournaments.map((tournament) => ({
       params: { id: tournament.id },
     })),
-    fallback: false,
+    fallback: true,
   };
 };
