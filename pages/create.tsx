@@ -1,11 +1,41 @@
 import { GetServerSideProps, NextPage } from 'next';
 import { Button, Input, Typography } from '@material-tailwind/react';
 import { getSession } from 'next-auth/react';
+import { useState } from 'react';
 
 import Layout from '../packages/components/Layout';
 
 const Create: NextPage = () => {
-  const addHome = () => null;
+  const [tournament, setTournament] = useState({
+    name: '',
+    date: '',
+    buyIn: 0,
+  });
+
+  const valueInput = (e: { target: HTMLInputElement }) => {
+    setTournament({
+      ...tournament,
+      [e.target.name]:
+        e.target.name === 'buyIn' ? e.target.valueAsNumber : e.target.value,
+    });
+  };
+
+  const addTournament = () => {
+    fetch('/api/tournaments', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(tournament),
+    });
+
+    setTournament({
+      name: '',
+      date: '',
+      buyIn: 0,
+    });
+  };
 
   return (
     <Layout>
@@ -13,16 +43,32 @@ const Create: NextPage = () => {
         <Typography variant='h3' color='white'>
           Cadastre aqui o torneio
         </Typography>
-        <div className='lg:w-2/5 bg-white rounded-lg grid grid-cols-1 gap-4 p-8'>
-          <Input label='Torneio' variant='standard' />
+        <div className='lg:w-2/5 bg-white rounded-lg p-8 grid grid-cols-1 gap-4'>
+          <Input
+            label='Torneio'
+            variant='standard'
+            name='name'
+            onChange={valueInput}
+            value={tournament.name}
+          />
           <Input
             label='Data'
             variant='standard'
             type='datetime-local'
             className='fill-white'
+            name='date'
+            onChange={valueInput}
+            value={tournament.date}
           />
-          <Input label='Buy-in' variant='standard' />
-          <Button onClick={() => addHome}>Salvar</Button>
+          <Input
+            label='Buy-in'
+            variant='standard'
+            type='number'
+            name='buyIn'
+            onChange={valueInput}
+            value={tournament.buyIn}
+          />
+          <Button onClick={() => addTournament()}>Salvar</Button>
         </div>
       </div>
     </Layout>

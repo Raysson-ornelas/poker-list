@@ -19,7 +19,6 @@ const prisma = new PrismaClient();
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const session = await getSession(context);
   const tournaments = await prisma.tournaments.findMany();
-  console.log(tournaments);
 
   if (!session) {
     return {

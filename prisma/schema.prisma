@@ -21,7 +21,7 @@ model User{
 model Tournaments{
   id            String     @id @default(cuid())
   name          String
-  date          DateTime
+  date          String
   buyIn         Float
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
