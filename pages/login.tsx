@@ -59,7 +59,11 @@ const Login: NextPage = () => {
             >
               <Github />
             </IconButton>
-            <IconButton size='lg' variant='text'>
+            <IconButton
+              size='lg'
+              variant='text'
+              onClick={() => signIn('google')}
+            >
               <Google />
             </IconButton>
             <IconButton size='lg' variant='text'>
