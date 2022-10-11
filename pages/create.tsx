@@ -1,5 +1,4 @@
 import { GetServerSideProps, NextPage } from 'next';
-import { Button, Input, Typography } from '@material-tailwind/react';
 import { getSession } from 'next-auth/react';
 import { useState } from 'react';
 
@@ -40,35 +39,23 @@ const Create: NextPage = () => {
   return (
     <Layout>
       <div className='flex flex-col items-center justify-center gap-y-8'>
-        <Typography variant='h3' color='white'>
-          Cadastre aqui o torneio
-        </Typography>
+        <p>Cadastre aqui o torneio</p>
         <div className='lg:w-2/5 bg-white rounded-lg p-8 grid grid-cols-1 gap-4'>
-          <Input
-            label='Torneio'
-            variant='standard'
-            name='name'
-            onChange={valueInput}
-            value={tournament.name}
-          />
-          <Input
-            label='Data'
-            variant='standard'
+          <input name='name' onChange={valueInput} value={tournament.name} />
+          <input
             type='datetime-local'
             className='fill-white'
             name='date'
             onChange={valueInput}
             value={tournament.date}
           />
-          <Input
-            label='Buy-in'
-            variant='standard'
+          <input
             type='number'
             name='buyIn'
             onChange={valueInput}
             value={tournament.buyIn}
           />
-          <Button onClick={() => addTournament()}>Salvar</Button>
+          <button onClick={() => addTournament()}>Salvar</button>
         </div>
       </div>
     </Layout>

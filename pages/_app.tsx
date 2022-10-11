@@ -1,5 +1,4 @@
 import '../styles/globals.css';
-import { ThemeProvider } from '@material-tailwind/react';
 import { SessionProvider } from 'next-auth/react';
 import { Session } from 'next-auth';
 
@@ -13,11 +12,9 @@ function MyApp({
 }>) {
   return (
     <SessionProvider session={session}>
-      <ThemeProvider>
-        <div className='bg-gray-900 min-h-screen'>
-          <Component {...pageProps} />
-        </div>
-      </ThemeProvider>
+      <div className='bg-first min-h-screen'>
+        <Component {...pageProps} />
+      </div>
     </SessionProvider>
   );
 }

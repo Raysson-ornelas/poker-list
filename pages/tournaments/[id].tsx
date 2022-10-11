@@ -4,7 +4,7 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import { PrismaClient, Tournaments } from '@prisma/client';
 
-import Layout from '../../packages/components/Layout';
+import Layout from '../../packages/layout/Layout';
 
 interface IParams extends ParsedUrlQuery {
   id: string;

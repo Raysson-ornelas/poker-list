@@ -2,7 +2,7 @@ import { getSession } from 'next-auth/react';
 import { PrismaClient } from '@prisma/client';
 
 import Grid from '../packages/components/Grid';
-import Layout from '../packages/components/Layout';
+import Layout from '../packages/layout/Layout';
 
 import type { GetServerSideProps } from 'next';
 

@@ -4,7 +4,7 @@ interface Props {
   children: ReactNode;
 }
 
-function Container(props: Props) {
+export function Container(props: Props) {
   const { children } = props;
 
   return (
@@ -13,5 +13,3 @@ function Container(props: Props) {
     </div>
   );
 }
-
-export default Container;

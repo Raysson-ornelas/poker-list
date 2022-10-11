@@ -1,8 +1,7 @@
 import { ReactNode } from 'react';
 
-import Navbar from '../components/NavBar';
-
-import Container from './Container';
+import Navbar from '../components/organisms/navbar/NavBar';
+import { Container } from '../components/atoms/container';
 
 interface Props {
   children: ReactNode;
