@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 interface Props {
   children?: ReactNode;
-  label?: string;
+  label: string;
 }
 
 export function Button({ label }: Props) {

@@ -2,16 +2,10 @@ import { render } from '@testing-library/react';
 
 import { H2 } from '.';
 
-test('renders a text', () => {
-  const { container, getByText } = render(
-    <H2 label='teste' className='text-five' />,
-  );
-  expect(getByText('teste')).toBeInTheDocument();
-  expect(container.firstChild).toMatchInlineSnapshot(`
-    <h2
-      class="text-lg font-semibold text-five"
-    >
-      teste
-    </h2>
-  `);
+describe('Text components', () => {
+  test('renders an H2 with the test label and className text-five', () => {
+    const { getByText } = render(<H2 label='test' className='text-five' />);
+
+    expect(getByText('test')).toBeTruthy();
+  });
 });
