@@ -2,7 +2,7 @@ import { GetServerSideProps, NextPage } from 'next';
 import { getSession } from 'next-auth/react';
 import { useState } from 'react';
 
-import Layout from '../packages/components/Layout';
+import Layout from '../packages/layout/Layout';
 
 const Create: NextPage = () => {
   const [tournament, setTournament] = useState({

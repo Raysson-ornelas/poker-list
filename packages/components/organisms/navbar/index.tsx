@@ -1,10 +1,9 @@
 import { signOut, useSession } from 'next-auth/react';
-import Link from 'next/link';
 import { useState } from 'react';
 
-import Container from '../../atoms/container';
+import { Container } from '../../atoms/container';
 
-function NavBar() {
+export default function NavBar() {
   const { data: session } = useSession();
   const [openNav, setOpenNav] = useState(false);
 
@@ -19,5 +18,3 @@ function NavBar() {
     </div>
   );
 }
-
-export default NavBar;

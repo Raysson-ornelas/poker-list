@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
-import Navbar from '../components/organisms/navbar/NavBar';
 import { Container } from '../components/atoms/container';
+import NavBar from '../components/organisms/navbar';
 
 interface Props {
   children: ReactNode;
@@ -12,7 +12,7 @@ function Layout(props: Props) {
 
   return (
     <>
-      <Navbar />
+      <NavBar />
       <Container>
         <div className='flex flex-col justify-center'>{children}</div>
       </Container>

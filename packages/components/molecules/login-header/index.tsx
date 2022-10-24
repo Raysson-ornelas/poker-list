@@ -1,3 +1,5 @@
+import { signIn } from 'next-auth/react';
+
 import Facebook from '../../atoms/icons/Facebook';
 import Github from '../../atoms/icons/Github';
 import Google from '../../atoms/icons/Google';
@@ -10,13 +12,13 @@ export default function LoginHeader() {
       <H2 className='text-four text-center' label='Sign In with ' />
 
       <div className='flex gap-4 justify-center'>
-        <SocialButton>
+        <SocialButton onClick={() => signIn('github')}>
           <Github />
         </SocialButton>
         <SocialButton>
           <Facebook />
         </SocialButton>
-        <SocialButton>
+        <SocialButton onClick={() => signIn('google')}>
           <Google />
         </SocialButton>
       </div>

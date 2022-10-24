@@ -8,8 +8,8 @@ export default function LoginBody() {
       <H2 className='text-four text-center' label='Sign Up and join us' />
 
       <div className='flex flex-col gap-y-1'>
-        <Input type='text' label='Full Name' placeholder='janotlapin@xyz.com' />
-        <Input type='Email' label='Email' placeholder='dandelion-974' />
+        <Input type='text' label='Full Name' placeholder='dan delion' />
+        <Input type='Email' label='Email' placeholder='janotlapin@xyz.com' />
 
         <Input type='password' label='password' placeholder='' />
         <Button label='Create Account' />
