@@ -12,7 +12,7 @@ function MyApp({
 }>) {
   return (
     <SessionProvider session={session}>
-      <div className='bg-first min-h-screen'>
+      <div className='bg-gradient-to-br from-gray-800 via-gray-900 to-black  min-h-screen'>
         <Component {...pageProps} />
       </div>
     </SessionProvider>
